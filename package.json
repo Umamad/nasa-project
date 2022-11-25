@@ -1,7 +1,7 @@
 {
   "name": "nasa-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "project for learning purpose",
   "main": "index.js",
   "scripts": {
     "install-client": "npm install --prefix client",
@@ -11,7 +11,10 @@
     "server": "npm start --prefix server",
     "start": "npm run server & npm run client",
     "deploy": "npm run build --prefix client && npm run build --prefix server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
+    "test-server": "npm test --prefix server",
+    "test-client": "npm test --prefix client",
+    "test": "npm run test-client && npm run test-server"
   },
   "keywords": [],
   "author": "",
