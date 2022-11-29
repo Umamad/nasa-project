@@ -7,11 +7,14 @@
     "start": "nodemon src/server.js",
     "cluster": "pm2 start src/server.js -i max",
     "build": "node src/server.js",
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "jest": {
+    "testEnvironment": "node"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.3.2",
