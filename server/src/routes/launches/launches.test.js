@@ -5,7 +5,7 @@ const app = require("../../app");
 describe("Test Get /launches", () => {
   test("should respond with status 200 success", async () => {
     const response = await request(app)
-      .get("/launches")
+      .get("/v1/launches")
       .expect("Content-Type", /json/)
       .expect(200);
 
@@ -29,7 +29,7 @@ describe("Test Post /launches", () => {
 
   test("should respond with status 201 created", async () => {
     const response = await request(app)
-      .post("/launches")
+      .post("/v1/launches")
       .send(completeLaunchData)
       .expect("Content-Type", /json/)
       .expect(201);
@@ -43,7 +43,7 @@ describe("Test Post /launches", () => {
 
   test("It should catch missing required properties", async () => {
     const response = await request(app)
-      .post("/launches")
+      .post("/v1/launches")
       .send(launchDataWithoutDate)
       .expect("Content-Type", /json/)
       .expect(400);
