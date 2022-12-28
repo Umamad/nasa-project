@@ -34,7 +34,7 @@ describe("Test launches api", () => {
 
     test("should respond with status 201 created", async () => {
       const response = await request(app)
-        .post("/launches")
+        .post("/v1/launches")
         .send(completeLaunchData)
         .expect("Content-Type", /json/)
         .expect(201);
